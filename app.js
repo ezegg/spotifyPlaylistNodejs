@@ -98,6 +98,7 @@ app.get('/callback', function(req, res) {
 
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
+          console.log('his this is the response');
           console.log(body);
         });
 
@@ -139,6 +140,10 @@ app.get('/refresh_token', function(req, res) {
       });
     }
   });
+});
+
+app.get('https://api.spotify.com/v1/users/12136601823/playlists/5H3xqiaVK1njkaXwFbmCsf/tracks', function(req, res) {
+
 });
 
 console.log('Listening on 8888');

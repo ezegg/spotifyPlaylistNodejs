@@ -28,6 +28,7 @@
         <div id="oauth">
         </div>
         <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+        <button class="btn btn-default" id="get-playlist">Get an specific Playlist</button>
       </div>
     </div>
 
@@ -125,7 +126,22 @@
               });
             });
           }, false);
+
+          $( '#get-playlist' ).click(function() {
+          $.ajax({
+                url: 'https://api.spotify.com/v1/users/12136601823/playlists/5H3xqiaVK1njkaXwFbmCsf/tracks',
+                headers: {
+                      'Authorization': 'Bearer ' + access_token
+                    },
+                success: function(response) {
+                  console.debug(response);
+                }
+            });
+          });
+
         }
       })();
+
+      
     </script>
 </html>
